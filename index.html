@@ -80,6 +80,68 @@ a.card:hover{transform:translateY(-3px)}
 .row .role{color:var(--label);font-size:14px}
 .row p{flex:2 1 420px;margin:0;color:var(--body)}
 
+
+/* story sections */
+.sec-sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:16px}
+.sec-sub h3{font-size:22px;font-weight:600}.sec-sub span{font-size:13px;color:var(--label)}
+.arc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.step{padding:5vh 0 5vh 32px;min-height:30vh;position:relative;border-left:2px solid var(--soft);opacity:.45;transition:opacity .3s,border-color .3s}
+.step:before{content:"";position:absolute;left:-8px;top:calc(5vh + 8px);width:14px;height:14px;border-radius:50%;background:var(--soft);border:2px solid var(--navy);transition:background .3s}
+.step.on{opacity:1;border-color:var(--navy)}.step.on:before{background:var(--sky)}
+.when{font-size:13px;font-weight:600;color:var(--label)}
+.step h3{font-size:28px;font-weight:600;margin-top:6px}
+.inline-metric{display:none;margin-top:14px;background:var(--soft);border-radius:16px;padding:16px}
+.inline-metric b{font-family:Sora,sans-serif;font-size:28px;display:block}.inline-metric span{font-size:14px;color:var(--body)}
+.panel{position:sticky;top:96px;background:var(--navy);color:#fff;border-radius:24px;padding:36px;min-height:340px;display:flex;flex-direction:column;gap:8px}
+.p-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
+.p-big{font-family:Sora,sans-serif;font-size:clamp(44px,6vw,72px);font-weight:700;letter-spacing:-.04em;line-height:1.05}
+.p-cap{color:var(--on-navy);margin:0}
+.bars{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.bars>div{position:relative;background:var(--tile);border-radius:8px;height:30px;overflow:hidden}
+.bars i{position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--line);border-radius:8px;animation:grow .8s ease both}
+.bars i.after{background:var(--sky)}
+.bars span{position:absolute;left:10px;top:5px;font-size:13px;font-weight:600;color:#fff;mix-blend-mode:normal}
+.bars i.after+span{color:var(--navy)}
+.p-prog{margin-top:auto;height:4px;background:var(--tile);border-radius:4px;overflow:hidden}.p-prog i{display:block;height:100%;width:0;background:var(--sky);transition:width .4s}
+@keyframes grow{from{width:0}}
+.mapcard,.card-plain{background:var(--soft);border-radius:24px;padding:28px;margin-top:48px}
+.card-plain{margin-top:0}
+#map{width:100%;height:auto;display:block}
+#map .dots circle{fill:#C4D3EA}
+#map .rt{fill:none;stroke:var(--navy);stroke-width:2;stroke-dasharray:6 6}
+#map .pin circle{fill:var(--navy);stroke:#fff;stroke-width:3}#map .pin.alt circle{fill:var(--sky);stroke:var(--navy);stroke-width:2}
+#map text{font-size:13px;font-weight:600;fill:var(--navy);font-family:Inter,sans-serif}
+.split{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px}
+.sk-wrap{overflow-x:auto}#sankey{width:100%;min-width:620px;height:auto;display:block}
+#sankey .lk{fill:var(--navy);opacity:.16;transition:opacity .2s}
+#sankey .nd rect{fill:var(--navy)}#sankey .nd rect.r{fill:#6AA9E3}
+#sankey text{font-size:13px;font-family:Inter,sans-serif;fill:var(--body)}
+#sankey.hov .lk{opacity:.05}#sankey .lk.act{opacity:.6}
+#sankey .nd{cursor:pointer}
+.matrix{width:100%;border-collapse:collapse;font-size:13px}
+.matrix th,.matrix td{padding:10px 4px;text-align:center}.card-plain{min-width:0}.matrix thead th{color:var(--label);font-weight:600}
+.matrix tbody th{text-align:left;font-weight:600;color:var(--navy)}
+.matrix td{color:var(--navy);opacity:.9}
+.matrix tbody tr{cursor:pointer;border-top:1px solid #D5E1F2}
+.matrix tbody tr.sel{background:var(--sky)}
+.matrix tbody tr:focus-visible{outline:2px solid var(--navy)}
+.matrix.pick tbody tr:not(.sel) td{opacity:.25}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.case{background:var(--soft);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px}
+.case h3{font-size:28px;font-weight:600}.case .card-top{align-items:center}
+.case .chip{background:var(--navy);color:#fff}
+.case .q{margin:0;color:var(--body)}
+.ba{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ba b{display:block;font-family:Sora,sans-serif;font-size:34px;letter-spacing:-.03em;line-height:1.1}
+.ba span{font-size:13px;color:var(--label)}.ba .arr{font-size:20px;color:var(--label)}
+.rec{background:#fff;border-radius:14px;padding:14px 16px;font-size:15px}
+@media (max-width:860px){
+  .arc{grid-template-columns:minmax(0,1fr)}.panel{display:none}.inline-metric{display:block}
+  .step{opacity:1;min-height:0;padding:28px 0 28px 24px}.step:before{top:36px}
+  .split{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.bars i{animation:none}.step,.lk{transition:none}}
+
 /* footer */
 footer{margin-top:112px;background:var(--sky);color:var(--navy);border-radius:28px;padding:88px 40px 40px}
 footer h2{font-size:clamp(36px,5vw,58px);font-weight:600;letter-spacing:-.04em;line-height:1.05;max-width:760px}
@@ -108,7 +170,7 @@ footer h2{font-size:clamp(36px,5vw,58px);font-weight:600;letter-spacing:-.04em;l
     <nav>
       <a class="brand" href="#top">varon miranda</a>
       <div class="nav-links">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+        <a href="#journey">Path</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#contact">Contact</a>
       </div>
     </nav>
     <div class="hero-grid">
@@ -132,9 +194,91 @@ footer h2{font-size:clamp(36px,5vw,58px);font-weight:600;letter-spacing:-.04em;l
   </div>
 </header>
 
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head"><h2>My path, one role at a time</h2><span>Scroll to follow the arc</span></div>
+    <div class="arc">
+      <div class="steps"><article class="step" data-i="0" data-big="1st" data-cap="TEDx event at AIT Pune, as Marketing Head" data-bar=''>
+<div class="when">Jun 2019 · AIT Pune · AGIF merit scholarship</div><h3>B.E. Mechanical Engineering</h3>
+<div class="inline-metric"><b>1st</b> <span>TEDx event at AIT Pune, as Marketing Head</span></div></article><article class="step" data-i="1" data-big="35% → 95%" data-cap="closure rate on incidents after the first real-time Power BI dashboard, scaled to VP reviews" data-bar='35,95'>
+<div class="when">Aug 2019 to Jul 2020 · Pune</div><h3>Graduate Trainee, Mahindra</h3>
+<div class="inline-metric"><b>35% → 95%</b> <span>closure rate on incidents after the first real-time Power BI dashboard, scaled to VP reviews</span></div></article><article class="step" data-i="2" data-big="$10M" data-cap="finished-goods inventory cleared leading a supply strategy rebuild at Sampo Rosenlew, plus a COO-approved $6M greenfield case" data-bar=''>
+<div class="when">Sep 2020 to Jul 2023 · Chandigarh, Indore, Finland</div><h3>Assistant Manager, Mahindra</h3>
+<div class="inline-metric"><b>$10M</b> <span>finished-goods inventory cleared leading a supply strategy rebuild at Sampo Rosenlew, plus a COO-approved $6M greenfield case</span></div></article><article class="step" data-i="3" data-big="800+" data-cap="parts scheduled across 120 suppliers at 100% on-time delivery for a harvester launch" data-bar=''>
+<div class="when">Aug 2023 to Feb 2024 · Indore</div><h3>Deputy Manager, Mahindra</h3>
+<div class="inline-metric"><b>800+</b> <span>parts scheduled across 120 suppliers at 100% on-time delivery for a harvester launch</span></div></article><article class="step" data-i="4" data-big="82% → 100%" data-cap="material availability across a $100M a month, 42-supplier network" data-bar='82,100'>
+<div class="when">Feb 2024 to Jul 2025 · Ahmedabad</div><h3>Senior Manager, Tata Motors</h3>
+<div class="inline-metric"><b>82% → 100%</b> <span>material availability across a $100M a month, 42-supplier network</span></div></article><article class="step" data-i="5" data-big="350+" data-cap="member Graduate Student Council, led as president" data-bar=''>
+<div class="when">Expected May 2027 · Washington, DC</div><h3>STEM MBA, Kogod</h3>
+<div class="inline-metric"><b>350+</b> <span>member Graduate Student Council, led as president</span></div></article></div>
+      <aside class="panel" aria-live="polite">
+        <div class="p-label">Headline result</div>
+        <div class="p-big" id="pBig">1st</div>
+        <p class="p-cap" id="pCap">TEDx event at AIT Pune, as Marketing Head</p>
+        <div class="bars" id="pBars"></div>
+        <div class="p-prog"><i id="pProg"></i></div>
+      </aside>
+    </div>
+    <div class="mapcard">
+      <div class="sec-sub"><h3>Where the work happened</h3><span>Schematic map. Positions are approximate.</span></div>
+      <svg id="map" viewBox="0 0 760 270" role="img" aria-label="Schematic map: work in India, an assignment in Finland, MBA in Washington, DC">
+<defs><pattern id="dp" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="1.6" fill="#C4D3EA"/></pattern></defs><rect x="0" y="0" width="760" height="270" fill="url(#dp)"/>
+<path class="rt" d="M621,231 Q534,54 446,64"/><path class="rt" d="M109,160 Q365,100 621,231"/>
+<g class="pin"><circle cx="621" cy="231" r="9"/><text x="621" y="261" text-anchor="middle">India · Pune, Indore, Ahmedabad</text></g>
+<g class="pin alt"><circle cx="446" cy="64" r="8"/><text x="430" y="69" text-anchor="end">Finland · Sampo Rosenlew</text></g>
+<g class="pin"><circle cx="109" cy="160" r="9"/><text x="109" y="190" text-anchor="middle">Washington, DC · Kogod</text></g>
+</svg>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><h2>From operations to consulting</h2><span>Hover a node to trace it</span></div>
+    <div class="split">
+      <div class="card-plain">
+        <div class="sec-sub"><h3>What operating gave me</h3><span>Link width is my own weighting, not a measurement.</span></div>
+        <div class="sk-wrap"><svg id="sankey" viewBox="0 0 760 326" role="img" aria-label="Flow diagram linking four operator experiences to four consulting competencies"><path class="lk" data-a="S" data-b="sa" d="M202,10 C386.0,10 386.0,146 570,146 L570,182 C386.0,182 386.0,46 202,46Z"/><path class="lk" data-a="S" data-b="im" d="M202,46 C386.0,46 386.0,232 570,232 L570,256 C386.0,256 386.0,70 202,70Z"/><path class="lk" data-a="S" data-b="st" d="M202,70 C386.0,70 386.0,10 570,10 L570,22 C386.0,22 386.0,82 202,82Z"/><path class="lk" data-a="P" data-b="qa" d="M202,96 C386.0,96 386.0,72 570,72 L570,96 C386.0,96 386.0,120 202,120Z"/><path class="lk" data-a="P" data-b="im" d="M202,120 C386.0,120 386.0,256 570,256 L570,292 C386.0,292 386.0,156 202,156Z"/><path class="lk" data-a="P" data-b="st" d="M202,156 C386.0,156 386.0,22 570,22 L570,34 C386.0,34 386.0,168 202,168Z"/><path class="lk" data-a="C" data-b="qa" d="M202,182 C386.0,182 386.0,96 570,96 L570,132 C386.0,132 386.0,218 202,218Z"/><path class="lk" data-a="C" data-b="st" d="M202,218 C386.0,218 386.0,34 570,34 L570,58 C386.0,58 386.0,242 202,242Z"/><path class="lk" data-a="C" data-b="sa" d="M202,242 C386.0,242 386.0,182 570,182 L570,194 C386.0,194 386.0,254 202,254Z"/><path class="lk" data-a="X" data-b="sa" d="M202,268 C386.0,268 386.0,194 570,194 L570,218 C386.0,218 386.0,292 202,292Z"/><path class="lk" data-a="X" data-b="im" d="M202,292 C386.0,292 386.0,292 570,292 L570,316 C386.0,316 386.0,316 202,316Z"/><g class="nd" data-k="S"><rect x="190" y="10" width="12" height="72" rx="3"/><text x="180" y="51.0" text-anchor="end">Supplier management</text></g><g class="nd" data-k="P"><rect x="190" y="96" width="12" height="72" rx="3"/><text x="180" y="137.0" text-anchor="end">Production planning</text></g><g class="nd" data-k="C"><rect x="190" y="182" width="12" height="72" rx="3"/><text x="180" y="223.0" text-anchor="end">Cost and working capital</text></g><g class="nd" data-k="X"><rect x="190" y="268" width="12" height="48" rx="3"/><text x="180" y="297.0" text-anchor="end">Cross-border launch</text></g><g class="nd" data-k="st"><rect class="r" x="570" y="10" width="12" height="48" rx="3"/><text x="592" y="39.0">Problem structuring</text></g><g class="nd" data-k="qa"><rect class="r" x="570" y="72" width="12" height="60" rx="3"/><text x="592" y="107.0">Quantitative analysis</text></g><g class="nd" data-k="sa"><rect class="r" x="570" y="146" width="12" height="72" rx="3"/><text x="592" y="187.0">Stakeholder alignment</text></g><g class="nd" data-k="im"><rect class="r" x="570" y="232" width="12" height="84" rx="3"/><text x="592" y="279.0">Implementation</text></g></svg></div>
+      </div>
+      <div class="card-plain">
+        <div class="sec-sub"><h3>Skills by project</h3><span>Click a project to light up its skills.</span></div>
+        <div class="sk-wrap"><table class="matrix" id="matrix">
+          <thead><tr><th></th><th>Python</th><th>SQL</th><th>Power BI</th><th>SAP MM</th><th>LLM agents</th><th>Supply chain</th></tr></thead>
+          <tbody>
+            <tr tabindex="0"><th scope="row">Hektor</th><td data-s="py">●</td><td></td><td></td><td></td><td data-s="llm">●</td><td data-s="sc">●</td></tr>
+            <tr tabindex="0"><th scope="row">DealBridge</th><td data-s="py">●</td><td data-s="sql">●</td><td></td><td></td><td data-s="llm">●</td><td></td></tr>
+            <tr tabindex="0"><th scope="row">Tata analytics</th><td></td><td></td><td data-s="bi">●</td><td data-s="sap">●</td><td></td><td data-s="sc">●</td></tr>
+            <tr tabindex="0"><th scope="row">Mahindra operations</th><td></td><td></td><td data-s="bi">●</td><td data-s="sap">●</td><td></td><td data-s="sc">●</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head"><h2>Two cases, one template</h2><span>Question · Result · Recommendation</span></div>
+    <div class="grid2">
+      <article class="case">
+        <div class="card-top"><h3>Hektor</h3><a class="chip" href="https://hektor-supply-chain.base44.app" target="_blank" rel="noopener">Live app ↗</a></div>
+        <p class="q"><b>Question.</b> How fast can a company re-plan when a tariff or export rule changes?</p>
+        <div class="ba"><div><b>1 week</b><span>manual scenario planning</span></div><div class="arr">→</div><div><b>&lt; 1 hour</b><span>with live data in Python risk models</span></div></div>
+        <div class="rec"><b>What I'd recommend.</b> Start with the highest-risk tier-1 parts, prove the hour-long cycle, then widen to deeper tiers.</div>
+      </article>
+      <article class="case">
+        <div class="card-top"><h3>DealBridge</h3><a class="chip" href="https://www.perplexity.ai/computer/a/0dc88755-a1d3-471f-936d-8d399a5b9185" target="_blank" rel="noopener">Live app ↗</a></div>
+        <p class="q"><b>Question.</b> How much partner time does M&amp;A due diligence burn on work a model could do?</p>
+        <div class="ba"><div><b>~$430M</b><span>modeled value across 537 deals</span></div><div class="arr">at</div><div><b>20%</b><span>diligence time saved</span></div></div>
+        <div class="rec"><b>What I'd recommend.</b> Pilot with one deal team, measure clause-review hours against precedent, then scale to the firm.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
-    <div class="sec-head"><h2>What I'm building</h2><span>Ventures · Research · Builds</span></div>
+    <div class="sec-head"><h2>Everything I'm building</h2><span>Ventures · Research · Builds</span></div>
     <div class="grid">
       <a class="card dark" href="https://hektor-supply-chain.base44.app" target="_blank" rel="noopener">
         <div class="card-top"><span class="chip">VENTURE</span><span class="arrow">↗</span></div>
@@ -188,17 +332,6 @@ footer h2{font-size:clamp(36px,5vw,58px);font-weight:600;letter-spacing:-.04em;l
   </div>
 </section>
 
-<section id="experience">
-  <div class="wrap">
-    <div class="sec-head"><h2>Where I've worked</h2></div>
-    <div class="rows">
-      <div class="row"><div class="who"><h3>Tata Motors</h3><div class="role">Senior Manager, Supply Chain</div></div><p>Ran a 42-supplier Tier 1 network behind $100M a month of production, and powertrain supply for TGDi, CNG and EV programs on Tiago, Tigor and Nexon.</p></div>
-      <div class="row"><div class="who"><h3>Mahindra &amp; Mahindra</h3><div class="role">Procurement &amp; Planning · India, Finland</div></div><p>800+ SKU launches across 120+ suppliers, crisis supply planning through the Punjab power crisis and COVID-19, a greenfield SAP MM rollout and the company's first real-time logistics dashboard.</p></div>
-      <div class="row"><div class="who"><h3>American University Kogod</h3><div class="role">STEM MBA, 2027</div></div><p>Business Analytics and Finance. Graduate Student Council president, Lead Admissions Ambassador.</p></div>
-    </div>
-  </div>
-</section>
-
 <footer id="contact">
   <div class="wrap">
     <h2>Let's talk operations, strategy, or what you're building.</h2>
@@ -211,5 +344,46 @@ footer h2{font-size:clamp(36px,5vw,58px);font-weight:600;letter-spacing:-.04em;l
 </footer>
 
 </div>
+
+<script>
+(function(){
+var steps=[].slice.call(document.querySelectorAll('.step'));
+var big=document.getElementById('pBig'),cap=document.getElementById('pCap'),bars=document.getElementById('pBars'),prog=document.getElementById('pProg');
+function show(i){
+  var s=steps[i];if(!s)return;
+  steps.forEach(function(x,k){x.classList.toggle('on',k===i)});
+  big.textContent=s.dataset.big;cap.textContent=s.dataset.cap;
+  bars.innerHTML='';
+  if(s.dataset.bar){var p=s.dataset.bar.split(',');
+    bars.innerHTML='<div><i style="--w:'+p[0]+'%"></i><span>before '+p[0]+'%</span></div><div><i class="after" style="--w:'+p[1]+'%"></i><span>after '+p[1]+'%</span></div>';}
+  prog.style.width=((i+1)/steps.length*100)+'%';
+}
+show(0);
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)show(+e.target.dataset.i)})},{rootMargin:'-45% 0px -45% 0px'});
+  steps.forEach(function(s){io.observe(s)});
+}
+var sk=document.getElementById('sankey');
+if(sk){
+  var links=[].slice.call(sk.querySelectorAll('.lk'));
+  [].slice.call(sk.querySelectorAll('.nd')).forEach(function(n){
+    var k=n.dataset.k;
+    function on(){sk.classList.add('hov');links.forEach(function(l){l.classList.toggle('act',l.dataset.a===k||l.dataset.b===k)})}
+    function off(){sk.classList.remove('hov');links.forEach(function(l){l.classList.remove('act')})}
+    n.addEventListener('mouseenter',on);n.addEventListener('mouseleave',off);n.addEventListener('click',on);
+  });
+}
+var mx=document.getElementById('matrix');
+if(mx){
+  var rows=[].slice.call(mx.querySelectorAll('tbody tr'));
+  rows.forEach(function(r){
+    function pick(){var was=r.classList.contains('sel');rows.forEach(function(x){x.classList.remove('sel')});
+      if(!was){r.classList.add('sel');mx.classList.add('pick')}else{mx.classList.remove('pick')}}
+    r.addEventListener('click',pick);
+    r.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}});
+  });
+}
+})();
+</script>
 </body>
 </html>
