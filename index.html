@@ -81,6 +81,7 @@ a.card:hover{transform:translateY(-3px)}
 .row p{flex:2 1 420px;margin:0;color:var(--body)}
 
 
+
 /* story sections */
 .sec-sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:16px}
 .sec-sub h3{font-size:22px;font-weight:600}.sec-sub span{font-size:13px;color:var(--label)}
@@ -88,7 +89,7 @@ a.card:hover{transform:translateY(-3px)}
 .step{padding:5vh 0 5vh 32px;min-height:30vh;position:relative;border-left:2px solid var(--soft);opacity:.45;transition:opacity .3s,border-color .3s}
 .step:before{content:"";position:absolute;left:-8px;top:calc(5vh + 8px);width:14px;height:14px;border-radius:50%;background:var(--soft);border:2px solid var(--navy);transition:background .3s}
 .step.on{opacity:1;border-color:var(--navy)}.step.on:before{background:var(--sky)}
-.when{font-size:13px;font-weight:600;color:var(--label)}
+.sub{margin:8px 0 0;color:var(--body);font-size:15px}.when{font-size:13px;font-weight:600;color:var(--label)}
 .step h3{font-size:28px;font-weight:600;margin-top:6px}
 .inline-metric{display:none;margin-top:14px;background:var(--soft);border-radius:16px;padding:16px}
 .inline-metric b{font-family:Sora,sans-serif;font-size:28px;display:block}.inline-metric span{font-size:14px;color:var(--body)}
@@ -209,7 +210,7 @@ footer h2{font-size:clamp(36px,5vw,58px);font-weight:600;letter-spacing:-.04em;l
 <div class="inline-metric"><b>800+</b> <span>parts scheduled across 120 suppliers at 100% on-time delivery for a harvester launch</span></div></article><article class="step" data-i="4" data-big="82% → 100%" data-cap="material availability across a $100M a month, 42-supplier network" data-bar='82,100'>
 <div class="when">Feb 2024 to Jul 2025 · Ahmedabad</div><h3>Senior Manager, Tata Motors</h3>
 <div class="inline-metric"><b>82% → 100%</b> <span>material availability across a $100M a month, 42-supplier network</span></div></article><article class="step" data-i="5" data-big="350+" data-cap="member Graduate Student Council, led as president" data-bar=''>
-<div class="when">Expected May 2027 · Washington, DC</div><h3>STEM MBA, Kogod</h3>
+<div class="when">Expected May 2027 · Washington, DC</div><h3>STEM MBA, Kogod</h3><p class="sub">Graduate Student Council president, Lead Admissions Ambassador</p>
 <div class="inline-metric"><b>350+</b> <span>member Graduate Student Council, led as president</span></div></article></div>
       <aside class="panel" aria-live="polite">
         <div class="p-label">Headline result</div>
@@ -344,6 +345,8 @@ footer h2{font-size:clamp(36px,5vw,58px);font-weight:600;letter-spacing:-.04em;l
 </footer>
 
 </div>
+
+
 
 <script>
 (function(){
